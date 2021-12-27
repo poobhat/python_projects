@@ -39,7 +39,7 @@ class Solution:
         for interval in intervals:
             # To the empty answer list, append the first inveral
             # Keep on appending intervals as long as there are no overlaps of intervals
-            if answer == [] or answer[-1][1] < interval[0]:
+            if not answer or answer[-1][1] < interval[0]:
                 answer.append(interval)
             else:                                               # When there is overalp of intervals ..
                                                                 # .. the end value of the existing interval should be the max of the end values of overlapping intervals
@@ -47,13 +47,13 @@ class Solution:
 
         return answer
 
-
-
 s = Solution()
 intervals = [[1,5],[2,6],[8,10],[15,18]]
 print(s.merge(intervals))
 
-
-
+'''
+Time complexity : O(n log n) - Due to sort() function
+Space complexity : O(n)
+'''
 
 
