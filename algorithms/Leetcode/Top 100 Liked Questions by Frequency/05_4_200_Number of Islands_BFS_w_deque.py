@@ -1,5 +1,12 @@
 """
-Breadth First Search - 62% faster
+BFS : Breadth First Search - 62% faster
+
+Time complexity : O(M×N) where M is the number of rows and N is the number
+of columns.
+
+Space complexity : O(min(M,N)) because in worst case where the grid is filled
+with lands, the size of queue can grow up to min(M,N).
+
 """
 from collections import deque
 class Solution:
