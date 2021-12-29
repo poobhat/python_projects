@@ -50,6 +50,9 @@ At most 2000 calls will be made to get, addAtHead, addAtTail, addAtIndex and del
 
 """
 Singly Linked List using sentinel node
+
+faster than 75.55%
+Memory Usage less than 97.59%
 """
 
 class ListNode:
@@ -120,6 +123,19 @@ class MyLinkedList:
 
         # delete pred.next
         pred.next = pred.next.next
+
+
+"""
+Complexity Analysis
+
+Time complexity: 
+O(1) for addAtHead. 
+O(k) for get, addAtIndex, and deleteAtIndex, 
+where k is an index of the element to get, add or delete. 
+O(N) for addAtTail.
+
+Space complexity: O(1) for all operations.
+"""
 
 
 

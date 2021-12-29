@@ -1,7 +1,13 @@
 """
 Approach 2: Hashmap + DoubleLinkedList
 
-TODO: Understand Doubly Linked List
+Time complexity : O(1) both for put and get.
+
+Space complexity : O(capacity) since the space is used only for a hashmap and
+double linked list with at most capacity + 1 elements.
+
+faster than 11.35%
+Memory Usage less than 57.27%
 """
 
 class DLinkedNode():
