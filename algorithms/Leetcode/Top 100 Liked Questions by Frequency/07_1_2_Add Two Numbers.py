@@ -28,27 +28,46 @@ It is guaranteed that the list represents a number that does not have leading ze
 
 """
 
+"""
+faster than 13.37%
+Memory Usage less than 72.97%
+
+Complexity Analysis
+
+Time complexity : O(max(m,n)). Assume that m and n represents the length of l1 and l2
+ respectively, the algorithm above iterates at most max(m,n) times.
+
+Space complexity : O(max(m,n)). The length of the new list is at most max(m,n)+1.
+
+"""
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 class Solution:
-    def addTwoNumbers(self, l1: [int], l2: [int]) -> [int]:
-        # answer = [0]*(len(l1))
-        answer = []
-        carryOver = 0
-        for i in range(len(l1)):
-            sum = l1[i] + l2[i] + carryOver
-            if sum >= 10:
-                answer.append(sum%10)
-                carryOver = 1
-            else:
-                answer.append(sum)
-                carryOver = 0
-        if carryOver : answer.append(carryOver)
-        return answer
+    # @return a ListNode
+    def addTwoNumbers(self, l1:[ListNode], l2:[ListNode]) -> [ListNode]:
+        answer_root = curr = ListNode(0)
+        carry_over = 0
+
+        while l1 or l2 or carry_over:
+            v1, v2 = 0, 0
+            if l1:
+                v1 = l1.val
+                l1 = l1.next
+            if l2:
+                v2 = l2.val
+                l2 = l2.next
+
+            carry_over, first_digit_of_sum = divmod(v1 + v2 + carry_over, 10)
+
+            curr.next = ListNode(first_digit_of_sum)
+            curr = curr.next
+        return answer_root.next
 
 
-s = Solution()
-l1 = [2,4,3]
-l2 = [5,6,9]
-print(s.addTwoNumbers(l1,l2))
-print(342+965)
+
+
 
