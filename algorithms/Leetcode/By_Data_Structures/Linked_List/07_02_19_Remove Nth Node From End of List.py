@@ -48,6 +48,27 @@ class Solution:
             second = second.next
         second.next = second.next.next
         return dummy.next
+    """
+    Runtime: 30 ms, faster than 79.56% of Python3 online submissions for Remove Nth Node From End of List.
+    Memory Usage: 14.2 MB, less than 49.33%
+    """
+    def removeNthFromEnd3(self, head: [ListNode], n: int) -> [ListNode]:
+        dummy = ListNode(0)
+        dummy.next = head
+        slow = dummy
+        fast = head
+        for _ in range(n):
+            fast = fast.next
+        while fast:
+            slow = slow.next
+            fast = fast.next
+        slow.next = slow.next.next
+        return dummy.next
+
+    """
+    Runtime: 39 ms, faster than 23.54% of Python3 online submissions for Remove Nth Node From End of List.
+    Memory Usage: 14.3 MB, less than 49.33%
+    """
 
     def removeNthFromEnd2(self, head: [ListNode], n: int) -> [ListNode]:
         fast = slow = head
@@ -65,7 +86,7 @@ class Solution:
     Runtime: 28 ms, faster than 93.07% of Python3 online submissions.
     Memory Usage: 14.3 MB, less than 49.17% of Python3 online submissions.
     """
-    def removeNthFromEnd3(self, head: [ListNode], n: int) -> [ListNode]:
+    def removeNthFromEnd4(self, head: [ListNode], n: int) -> [ListNode]:
         def remove(head):
             if not head:
                 return 0, head

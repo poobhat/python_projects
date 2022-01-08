@@ -1,7 +1,6 @@
 """
-Runtime: 1384 ms, faster than 5.01% of Python3 online submissions for Palindrome Linked
-List.
-Memory Usage: 47.3 MB, less than 37.02%
+Runtime: 648 ms, faster than 99.12% of Python3 online submissions for Palindrome Linked List.
+Memory Usage: 31.5 MB, less than 92.26%
 """
 
 class Solution:
