@@ -1,0 +1,36 @@
+Table: Point
++-------------+------+
+| Column Name | Type |
++-------------+------+
+| x           | int  |
++-------------+------+
+x is the primary key column for this table.
+Each row of this table indicates the position of a point on the X-axis.
+
+Write an SQL query to report the shortest distance between any two points from the Point
+table.
+The query result format is in the following example.
+
+Example 1:
+Input:
+Point table:
++----+
+| x  |
++----+
+| -1 |
+| 0  |
+| 2  |
++----+
+Output:
++----------+
+| shortest |
++----------+
+| 1        |
++----------+
+Explanation: The shortest distance is between points -1 and 0 which is |(-1) - 0| = 1.
+------------------------------------------------------------------------
+-- Runtime: 216 ms, faster than 80.37%
+select min(abs(p1.x - p2.x)) as shortest from Point p1, Point p2 where p1.x <> p2.x;
+
+--Runtime: 255 ms, faster than 49.16%
+select min(p1.x - p2.x) shortest from point p1 inner join point p2 on p1.x > p2.x;
