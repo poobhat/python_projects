@@ -71,3 +71,12 @@ where visited_on >= (select min(visited_on)+6 from customer)
 group by visited_on, amount, average_amount
 order by visited_on
 
+-- Runtime: 305 ms, faster than 73.42%
+select a.visited_on, sum(b.day_sum) amount, round(avg(b.day_sum),2) average_amount
+FROM
+  (SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on ) a,
+  (SELECT visited_on, SUM(amount) AS day_sum FROM Customer GROUP BY visited_on ) b
+  where datediff(a.visited_on, b.visited_on) between 0 and 6
+  group by a.visited_on
+  having count(b.visited_on) = 7
+  order by a.visited_on
