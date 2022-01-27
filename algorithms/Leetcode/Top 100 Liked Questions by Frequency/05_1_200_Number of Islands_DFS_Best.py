@@ -42,10 +42,16 @@ where DFS goes by M×N deep.
 """
 
 class Solution:
+    """
+    grid = [
+    ["1","1","1","1","0"],
+    ["1","1","0","1","0"],
+    ["1","1","0","0","0"],
+    ["0","0","0","0","0"]
+    """
 
     def numIslands(self, grid):
         answer = 0
-
         for rowIdx in range(len(grid)):
             for columnIdx in range(len(grid[0])):
                 if grid[rowIdx][columnIdx] == '1': #Check the root for Depth first search

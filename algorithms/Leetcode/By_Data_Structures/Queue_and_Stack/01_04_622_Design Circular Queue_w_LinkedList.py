@@ -81,9 +81,6 @@ class MyCircularQueue:
     def isFull(self) -> bool:
         return self.curCapacity == self.maxCapacity
 
-
-
-
 # Your MyCircularQueue object will be instantiated and called as such:
 # obj = MyCircularQueue(k)
 # param_1 = obj.enQueue(value)

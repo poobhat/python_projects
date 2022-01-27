@@ -25,6 +25,11 @@ movingAverage.next(5); // return 6.0 = (10 + 3 + 5) / 3
 """
 Runtime: 104 ms, faster than 39.95%
 Memory Usage: 17.8 MB, less than 9.35%
+
+Complexity
+Time Complexity: O(N) where N is the size of the moving window, since we need to retrieve NN elements from the queue at each invocation 
+of next(val) function.
+Space Complexity: O(M), where M is the length of the queue which would grow at each invocation of the next(val) function.
 """
 class MovingAverage:
 
