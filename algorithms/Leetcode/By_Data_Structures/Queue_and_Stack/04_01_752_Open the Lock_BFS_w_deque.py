@@ -39,6 +39,12 @@ target.length == 4
 target will not be in the list deadends.
 target and deadends[i] consist of digits only.
 """
+###############################################################################
+"""
+Runtime: 948 ms, faster than 45.27%
+Memory Usage: 15.7 MB, less than 30.87%
+"""
+
 from collections import deque
 class Solution:
     def openLock(self, deadends: [str], target: str) -> int:
@@ -58,12 +64,11 @@ class Solution:
 
     def neighbours(self, code):
         neighbours = []
-        for idx, val in code:
+        for idx, val in enumerate(code):
             num = int(val)
             neighbours.append(code[:idx] + str((num+1) % 10) + code[idx+1:])
-            neighbours.append(code[:idx] + str((num-1) % 10) + code[idx+1:1])
+            neighbours.append(code[:idx] + str((num-1) % 10) + code[idx+1:])
         return neighbours
-
 
 
 
