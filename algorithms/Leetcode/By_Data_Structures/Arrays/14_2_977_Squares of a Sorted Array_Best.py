@@ -23,29 +23,19 @@ could you find an O(n) solution using a different approach?
 
 """
 """
-Two-pointer approach
+Timesort O(N)
+Runtime: 224 ms, faster than 83.62%
+Memory Usage: 16.4 MB, less than 5.51%
 """
 class Solution:
     def sortedSquares(self, nums: [int]) -> [int]:
-
-        n = len(nums)
-        num, left, right = 0,0, n-1
-        answer = [0]*n
-
-        for i in range(n-1, -1, -1):
-            if abs(nums[left]) > abs(nums[right]):
-                num = nums[left]
-                left+=1
-            else:
-                num = nums[right]
-                right-=1
-            answer[i] = num*num
-
-        return answer
+        sorted_nums = sorted(nums, key=lambda x:abs(x))
+        return [x**2 for x in sorted_nums]
 
 s = Solution()
 nums = [-4,-1,0,3,10]
-print(s.sortedSquares(nums))
+n1=[-4,-3,-2,-1,0]
+print(s.sortedSquares(n1))
 
 
 

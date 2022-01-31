@@ -46,8 +46,8 @@ class Solution:
         n1=m
         n2=n
 
-        for i in range(n2):
-            nums1[i+n1] = nums2[i]
+        for i in range(n):
+            nums1[i+m] = nums2[i]
         nums1.sort()
         print(nums1)
 

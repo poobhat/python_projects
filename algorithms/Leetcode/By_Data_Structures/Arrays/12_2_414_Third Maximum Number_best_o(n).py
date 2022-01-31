@@ -34,20 +34,27 @@ Constraints:
 
 
 Follow up: Can you find an O(n) solution?
-
 """
-
+#################################################################
+"""
+Runtime: 48 ms, faster than 93.03%
+Memory Usage: 14.8 MB, less than 95.00%
+"""
 class Solution:
     def thirdMax(self, nums: [int]) -> int:
-        nums = list(set(nums))
-        nums.sort(reverse=True)
-        n = len(nums)
-        print(nums)
-        if n >= 3:
-            return nums[2]
-        elif n < 3:
-            return nums[0]
+        a = b = c = -float("inf")
+        for num in nums:
+            if num in (a, b, c): continue
+            if num > a:   # (4, -inf, -inf), (5, 4, -inf), (6, 5, 4), (7, 6, 5)
+                num, a = a, num
+            if num > b: # (9, -inf, -inf), (9, 6, -inf),  (9,7,6)
+                num, b = b, num
+            if num > c: # (1, -inf, -inf), (2,1,-inf)
+                num, c = c, num
+        return a if c==-float("inf") else c
 
 s = Solution()
-nums = [1,2]
-print(s.thirdMax(nums))
+n1, n2, n3 = [1,2], [4,5,6,7], [9,6,3,7,1]
+print(s.thirdMax(n1))
+print(s.thirdMax(n2))
+print(s.thirdMax(n3))

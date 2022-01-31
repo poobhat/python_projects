@@ -28,6 +28,7 @@ class Solution:
 
 s = Solution()
 # nums = [0,1,2,2,3,0,4,2]
+# val = 2
 # output = [0,1,3,0,4,2,2,2]
 # nums = [2]
 # val =  2

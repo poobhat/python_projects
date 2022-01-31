@@ -52,9 +52,6 @@ class Solution:
         print(arr)
 
 
-
-
-
 s = Solution()
-arr = [1,0,1,2,3,4,5,0]
+arr = [1,0,1,2,0,3,4,5,0]
 s.duplicateZerosToLeft(arr)
