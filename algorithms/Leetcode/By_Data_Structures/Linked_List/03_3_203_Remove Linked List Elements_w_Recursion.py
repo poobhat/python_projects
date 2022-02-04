@@ -14,8 +14,11 @@ Output: []
 
 """
 """
-Runtime: 84 ms, faster than 9.92% 
-Memory Usage: 18.8 MB, less than 9.25%.
+Recursion
+
+Runtime: 97 ms, faster than 35.89%
+Memory Usage: 27 MB, less than 5.13% 
+
 """
 
 # Definition for singly-linked list.
@@ -23,18 +26,21 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
 class Solution:
     def removeElements(self, head: [ListNode], val: int) -> [ListNode]:
+        def rec(node, val):
+            if node:
+                if node.val == val:
+                    return rec(node.next, val)
+                else:
+                    node.next = rec(node.next, val)
+            return node
+        return rec(head, val)
 
-        answer_root = curr = ListNode(0)
 
-        while head:
-            if head.val != val:
-                curr.next = ListNode(head.val)
-                curr = curr.next
-            head = head.next
 
-        return answer_root.next
+
 
 
 

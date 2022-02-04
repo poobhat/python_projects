@@ -14,7 +14,7 @@ class Node(object):
 class Solution(object):
     def flatten(self, head):
         if not head: return
-        previous = Node(0)
+        previous = Node(0, None, None, None)
         stack = [head]
 
         while stack:

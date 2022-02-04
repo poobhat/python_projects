@@ -49,8 +49,8 @@ class Solution:
         second.next = second.next.next
         return dummy.next
     """
-    Runtime: 30 ms, faster than 79.56% of Python3 online submissions for Remove Nth Node From End of List.
-    Memory Usage: 14.2 MB, less than 49.33%
+    Runtime: 28 ms, faster than 95.87% of Python3 online submissions for Remove Nth Node From End of List.
+    Memory Usage: 13.9 MB, less than 92.09%
     """
     def removeNthFromEnd3(self, head: [ListNode], n: int) -> [ListNode]:
         dummy = ListNode(0)

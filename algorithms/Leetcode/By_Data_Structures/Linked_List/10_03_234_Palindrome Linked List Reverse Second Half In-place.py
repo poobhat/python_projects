@@ -14,7 +14,7 @@ class Solution:
         secondHalf = head.next if fast else head
 
         isPali = True
-        while firstHalf:
+        while firstHalf and isPali:
             isPali = isPali if firstHalf.val == secondHalf.val else False
             head, head.next, firstHalf = firstHalf, head, firstHalf.next
             secondHalf = secondHalf.next

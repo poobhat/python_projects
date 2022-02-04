@@ -90,6 +90,7 @@ class Solution(object):
     def flatten_dfs(self, prev, curr):
         """ return the tail of the flatten list """
         if not curr: return prev
+
         curr.prev = prev
         prev.next = curr
 

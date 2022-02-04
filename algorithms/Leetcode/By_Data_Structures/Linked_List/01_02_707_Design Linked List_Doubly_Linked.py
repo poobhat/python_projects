@@ -106,16 +106,3 @@ class MyLinkedList:
         self.size -= 1
         pred.next = succ
         succ.prev = pred
-
-
-
-
-
-
-
-
-
-
-
-
-
